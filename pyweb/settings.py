@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent  # Ссылка на manage.py
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG') == 'true'  # Запуск в режиме отладки. При вкл в продакшне, можно получить доступ к фацловой системе.
+DEBUG = os.getenv('DEBUG') == 'true'  # Запуск в режиме отладки. При вкл в продакшне, можно получить доступ к файловой системе.
 
 ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]  # Список разрешённых для подключения IP. Своего рода whitelist.
 
@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',  # сессии
     'django.contrib.messages',
     'django.contrib.staticfiles',  # управление статическими файлами
+    'rest_framework',
 
     'test_app',
     'common',
     'login',
+    'blog',
 ]  # Установленные приложения, важен порядок следования.
 
 MIDDLEWARE = [
