@@ -19,7 +19,7 @@ from django.urls import path
 from . import views  # Из текущего файла.
 
 urlpatterns = [
-    path('notes/', views.NoteListCreateAPIView.as_view()),
+    # path('notes/', views.NoteListCreateAPIView.as_view()),
     path('notes/<int:page>', views.NoteDetailAPIView.as_view()),
 
 ]
